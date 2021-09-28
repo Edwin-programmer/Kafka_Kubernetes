@@ -54,7 +54,7 @@ Enable IP tables
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
-### Helm Chart for Operator setup
+### Helm Chart for Operator
 ```
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
 chmod 700 get_helm.sh
@@ -79,4 +79,4 @@ sudo kubectl describe po my-cluster-kafka-0
 test expanding cluster...increase replica/ Kafka connections to external 
 ### Prometheus (JMX exporter for metrics)
 WIP
-
+### Producer/Consumer
