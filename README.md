@@ -2,7 +2,7 @@
 Kafka deployment on Kubernetes
 
 ## Configuration
-### DOCKER RUNTIME
+### Docker Runtime Environment
 ```shell
 $sudo apt-get update
 sudo apt-get install \
@@ -30,7 +30,6 @@ echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee -a /etc/
 sudo apt-get update
 sudo apt-get install -y kubectl
 ```
-
 ### Minikube
 Quickly sets up the local Kubernetes cluster, more information available at https://minikube.sigs.k8s.io/docs/start/
 ```
@@ -43,20 +42,6 @@ sudo apt-get install -y kubelet kubeadm kubectl
 sudo kubectl get pods
 sudo kubectl get nodes
 ```
-
-### IP tables
-Conntrack module provides stateful packet inspection for iptables
-Further information is located at http://conntrack-tools.netfilter.org/
-```
-sudo apt-get update -y
-sudo apt-get install -y conntrack
-```
-Enable IP tables
-```
-echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
-sudo sysctl -p
-```
-
 ### IP tables (Skip)
 Conntrack module provides stateful packet inspection for iptables
 Further information is located at http://conntrack-tools.netfilter.org/
@@ -69,7 +54,6 @@ Enable IP tables
 echo "net.bridge.bridge-nf-call-iptables=1" | sudo tee -a /etc/sysctl.conf
 sudo sysctl -p
 ```
-
 ### Helm Chart for Operator setup
 ```
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3
